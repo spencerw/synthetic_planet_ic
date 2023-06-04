@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --job-name={name}
+#SBATCH --partition=gpu-2080ti
+#SBATCH -t 48:00:00
+#SBATCH --mem=50G
+#SBATCH --gpus=1
+#SBATCH -A stf
+#SBATCH --mail-user=scw7@uw.edu
+#SBATCH --mail-type=ALL
+
+module load cuda/11.6.2
+srun genga -R -1
