@@ -2,8 +2,8 @@
 path=$1
 numitr=$2
 cd $path
-jid=$(sbatch --parsable jobfileNVME)
+jid=$(sbatch --parsable jobfile)
 
 for((i=1; i<=numitr; i++)); do
-    jid=$(sbatch --parsable --dependency=afterany:$jid jobfileNVME)
+    jid=$(sbatch --parsable --dependency=afterany:$jid jobfile)
 done
